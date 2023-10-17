@@ -1,0 +1,8 @@
+[workspace]
+resolver = "2"
+
+members = [
+    "wasm_script_skeleton",
+    "wasm_runner",
+    "script_api"
+]

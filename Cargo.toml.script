@@ -1,0 +1,10 @@
+[workspace]
+members = [
+    "script",
+    "script_api",
+]
+
+#[profile.release]
+#debug = false
+#lto = false
+#strip = "debuginfo"
