@@ -2,6 +2,7 @@
 static mut TEXT_BUFFER: [u8; 2048] = [0; 2048];
 static mut TEXT_SIZE: u32 = 0;
 
+///Writes text to the text buffer to be output (hopefully) onto a screen
 #[macro_export]
 macro_rules! debug {
     ($($arg:tt)*) => {

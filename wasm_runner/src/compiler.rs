@@ -81,10 +81,6 @@ fn copy_script_skeleton_to_tmpdir(tmp_path: &Path, code: String) -> Result<(), E
 /// Copies everything from the API directory in the workspace to the new tempdir
 fn copy_api_to_tmpdir(tmp_path: &Path) -> Result<(), Error> {
     fs::write(
-        tmp_path.join("script_api/src/error.rs"),
-        include_bytes!("../../script_api/src/error.rs"),
-    )?;
-    fs::write(
         tmp_path.join("script_api/src/lib.rs"),
         include_bytes!("../../script_api/src/lib.rs"),
     )?;

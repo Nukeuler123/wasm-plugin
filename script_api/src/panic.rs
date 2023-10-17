@@ -7,6 +7,7 @@ pub const PANIC_BUFFER_SIZE: usize = 1024;
 #[no_mangle]
 pub static mut PANIC_BUFFER: [u8; PANIC_BUFFER_SIZE] = [0; PANIC_BUFFER_SIZE];
 
+//Installs panic hook
 pub unsafe fn install() {
     std::panic::set_hook(Box::new(panic_hook));
 }
@@ -28,7 +29,7 @@ fn panic_hook(info: &PanicInfo) {
             .or_else(|| payload.downcast_ref::<String>().map(|x| x as &dyn Display))
             .expect("panic payload of type `&str` or `String`");
 
-        const PREFIX: &str = "/tmp/awsm_script/script/src/";
+        const PREFIX: &str = "/tmp/wasm_script/script/src/";
         let mut file = file.strip_prefix(PREFIX).unwrap_or(file);
         if file == "script.rs" {
             file = "lib.rs";

@@ -1,11 +1,9 @@
 use data::Data;
 pub use debug::*;
-pub use error::ScriptError;
 pub use script_action::ScriptAction;
 
 mod data;
 mod debug;
-mod error;
 pub mod panic;
 mod script_action;
 
